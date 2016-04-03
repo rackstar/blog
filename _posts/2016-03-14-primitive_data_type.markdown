@@ -61,7 +61,7 @@ var foo = 1; // foo is assigned to number 1
 foo = 2; // foo is assigned to number 2
 ```
 
-You can think of it as if foo is given the value of number 1 on the first line then on the second line it is given a new value of 2. Value 1 is completed unaffected by the assignment of foo to value 2.
+Value 1 is completed unaffected by our assignment of foo to value 2 on the second line.
 <br />
 <br />
 
@@ -86,7 +86,7 @@ function bar(1) {
 console.log(foo) // foo is still 1
 ```
 
-The assignment inside function bar would have not any effect to variable foo at all. Hence foo would still equal to 1.
+Since the assignment inside function bar is not valid it would not affect foo's value at all and therefore foo would still equal to 1.
 
 Combining it all, what do you think would foo's value be?
 
