@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Variable Assignment - Part 1
+title: "Variable Assignment - Part 1"
 ---
 
-##<center>Variable Assignment
-#####<center>the two tales of reference and primitive </center>
+##Variable Assignment
+#####the two tales of reference and primitive data types
 <br />
 
 In this two part series we dig deep how variable assignment is handled in javascript, the different data types, how they are assigned values, how the are compared and passed. The concepts are straight forward and easy to conceptualise but its far easier to confuse if you are not careful. 
