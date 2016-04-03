@@ -3,27 +3,27 @@ layout: post
 title: "Variable Assignment - Part 1"
 ---
 
-##Variable Assignment
-#####the two tales of reference and primitive data types
-<br />
-
+<br>
 In this two part series we dig deep how variable assignment is handled in javascript, the different data types, how they are assigned values, how the are compared and passed. The concepts are straight forward and easy to conceptualise but its far easier to confuse if you are not careful. 
 
 Variable assingment can be divided in to two groups , the primitive types and the reference types. We discuss in this first post the first data type, primitive types. 
 <br />
+<br />
 
-### Primitive Type
+### Primitive Type<br>
 
 * Number type:			&ensp;&ensp; 3.1416, 9, 12
-* Boolean type:			&nbsp;&ensp;&ensp;true, false
+* Boolean type:			&ensp;&ensp;true, false
 * String type:				&ensp;&ensp;&ensp;&ensp;"Hello, World"
 * Null type:					&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Null			
-* Undefined type:		&ensp;Undefined
+* Undefined type:		Undefined
 
-As of ES2015 there is an additional primitive value called [Symbol](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol). 
+(As of ES2015 there is an additional primitive value called [Symbol](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol). )
 <br />
-### Primitive Types are immutable
+<br />
 
+### Primitive Types are immutable
+<br />
 There is no way we can change or mutate a primitive's value.
 
 ```javascript
@@ -40,8 +40,10 @@ foo = 2; // foo is assigned to number 2
 
 You can think of it as if foo is given the value of number 1 on the first line then on the second line it is given a new value of 2. Value 1 is completed unaffected by the assignment of foo to value 2.
 <br />
-### Primitive Types are _passed_ by value
+<br />
 
+### Primitive Types are _passed_ by value
+<br />
 Primitive types are also passed by their value. Take the example below:
 
 ```javascript
@@ -63,9 +65,7 @@ console.log(foo) // foo is still 1
 
 The assignment inside function bar would have not any effect to variable foo at all. Hence foo would still equal to 1.
 
-Combining it all
-
-What do you think would foo's value be?
+Combining it all, what do you think would foo's value be?
 
 ```javascript
 var foo = 1;
@@ -82,17 +82,18 @@ bar = 2; // bar gets assigned a new value which is 2
 foo // is still 1
 ```
 
-You can think of it this way:
-First line: foo is given a value 1
-Second line: bar is given the value of foo which is 1
-(At this point both bar and foo has the value of 1.)
-Third line: we assign bar to value 2.
-Now bar has a value of 2, foo still has the value of 1. Foo is completed unaffected by our new assignment to bar hence foo is still 1.
+You can think of it this way:<br>
 
+Line 1: foo is given a value 1<br>
+Line 2: bar is given the value of foo which is 1
+(At this point both bar and foo has the value of 1.)<br>
+Line 3: we assign bar to value 2.<br>
+Now bar has a value of 2, foo still has the value of 1. Foo is completed unaffected by our new assignment to bar in Line 3, hence foo is still 1.
 
-<br />
+<br>
+
 ### Primitive Types are _compared_ by value
-
+<br />
 As we saw in earlier examples, the primitive's value is stored directly to its variable assignment.
 
 This means that if we assign two different variables the exact same primitive value, both variable would store have the value of that exact same primitive value and as you can expert comparing them would yield true.
