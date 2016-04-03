@@ -1,0 +1,67 @@
+## Variable Assingment - Reference Types
+
+This is the last part of our two part series in Varialble Assignment. In the previous post we dug deep about primitive types, now we are going over reference Types
+
+### Reference Types
+
+Object			{ a:1 }
+Array			[ 1, 2 ]
+Function		function (a) { return a; }
+
+You can also consider that there is only one reference type, an object because arrays and functions are themselves an object.
+
+### Reference Types are Mutable
+
+If you set a variable to a new reference type such as a new object or an array you can actually modify its values unlike primitives.
+
+```javascript
+var foo = { a: 1, b: 2 };
+foo.a = 5;
+foo.b = 10;
+foo // { a: 5, b: 10 }
+```
+
+### Reference Types are compared by reference
+
+Primitive value is stored directly in the location that the variable accesses.
+
+Reference value stored in the variable location is a pointer to a location in memory where the object is stored.
+
+```javascript
+var foo = { a: 1, b: 2 };
+var bar = { a: 1, b: 2 };
+foo === bar // false;
+
+bar = foo;
+foo === bar // true
+```
+if we assign similar looking objects to foo and bar and compare them we will get false because they are actually referencing two totally different objects.
+
+ interpreter considers them to be two different and distinct object instance. Even though the contents are the same the instances are unique from each other.
+
+On the first line we are creating an object instance with a and b property, on the second line we are creating another compeltely different instance with the same contents at the first one. The first and second instance are hold completely in different place in memory.
+
+We can create many { a: 1, b: 2} objects and eventhough their contents are the same in each creation they would be completely distinct instance.
+
+We can correct this by assing bar is equal to foo, i.e. bar is equal to the object that a is referencing.
+
+You can think of it this way, we are assigning bar to the same object that foo is referencing, i.e. we are asking bar to point to the same object the foo is pointing to.
+
+So when we compare them they would now evaluate to true
+
+```javascript
+var foo = { a: 1, b: 2 }; // foo points to an object instance
+var bar = { a: 1, b: 2 }; // bar points to a similar looking but completely differnt object instance 
+foo === bar // false;
+
+bar = foo; // we tell bar to point the the same object instance as foo
+foo === bar // true
+```
+
+
+
+
+```javascript
+
+```
+
