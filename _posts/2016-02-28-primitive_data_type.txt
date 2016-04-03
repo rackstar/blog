@@ -1,0 +1,111 @@
+---
+layout: post
+title: Variable Assignment - Part 1
+---
+
+##<center>Variable Assignment
+#####<center>the two tales of reference and primitive </center>
+<br />
+
+In this two part series we dig deep how variable assignment is handled in javascript, the different data types, how they are assigned values, how the are compared and passed. The concepts are straight forward and easy to conceptualise but its far easier to confuse if you are not careful. 
+
+Variable assingment can be divided in to two groups , the primitive types and the reference types. We discuss in this first post the first data type, primitive types. 
+<br />
+
+### Primitive Type
+
+* Number type:			&ensp;&ensp; 3.1416, 9, 12
+* Boolean type:			&nbsp;&ensp;&ensp;true, false
+* String type:				&ensp;&ensp;&ensp;&ensp;"Hello, World"
+* Null type:					&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Null			
+* Undefined type:		&ensp;Undefined
+
+As of ES2015 there is an additional primitive value called [Symbol](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Symbol). 
+<br />
+### Primitive Types are immutable
+
+There is no way we can change or mutate a primitive's value.
+
+```javascript
+var foo = 1; // foo is 1
+foo = 2; // foo is now 2
+```
+
+It is tempting to think that we are assigning foo's value on the first line which is number 1 to number 2 on the second line. But all we are doing on the second line is assigning a new number to the variable foo without the involvement of 1 at all.
+
+```javascript
+var foo = 1; // foo is assigned to number 1
+foo = 2; // foo is assigned to number 2
+```
+
+You can think of it as if foo is given the value of number 1 on the first line then on the second line it is given a new value of 2. Value 1 is completed unaffected by the assignment of foo to value 2.
+<br />
+### Primitive Types are _passed_ by value
+
+Primitive types are also passed by their value. Take the example below:
+
+```javascript
+var foo = 1;
+function bar(foo) {
+	foo = 2;
+}
+console.log(foo) // ??
+```
+If we pass foo to function bar what we are really passing is the value of foo which is 1 and of course the value 1 would not be mutated to value 2.
+
+```javascript
+var foo = 1
+function bar(1) {
+	1 = 2; // cant change the values
+}
+console.log(foo) // foo is still 1
+```
+
+The assignment inside function bar would have not any effect to variable foo at all. Hence foo would still equal to 1.
+
+Combining it all
+
+What do you think would foo's value be?
+
+```javascript
+var foo = 1;
+var bar = foo;
+bar = 2;
+foo // ??
+```
+
+```javascript
+var foo = 1;
+var bar = foo; // bar gets assigned value of foo which is 1
+var bar = 1; // the second line code is the same as this
+bar = 2; // bar gets assigned a new value which is 2
+foo // is still 1
+```
+
+You can think of it this way:
+First line: foo is given a value 1
+Second line: bar is given the value of foo which is 1
+(At this point both bar and foo has the value of 1.)
+Third line: we assign bar to value 2.
+Now bar has a value of 2, foo still has the value of 1. Foo is completed unaffected by our new assignment to bar hence foo is still 1.
+
+
+<br />
+### Primitive Types are _compared_ by value
+
+As we saw in earlier examples, the primitive's value is stored directly to its variable assignment.
+
+This means that if we assign two different variables the exact same primitive value, both variable would store have the value of that exact same primitive value and as you can expert comparing them would yield true.
+
+```javascript
+var foo = "Hello World";
+var bar = "Hello World";
+foo === bar // true
+```
+foo's value is being compared to bar's value, 
+
+```javascript
+foo === bar // is the same as below
+"Hello World" === "Hello World"
+```
+Thats it for now we would compare and contrast primitive value with reference type on the next post.
