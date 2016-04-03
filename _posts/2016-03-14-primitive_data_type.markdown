@@ -22,7 +22,30 @@ Variable assingment can be divided in to two groups , the primitive types and th
 <br />
 <br />
 
-### Primitive Types are immutable
+### Primitive Types are _compared_ by value
+<br />
+During variable assignment a primitive's value is stored directly to the variable we are assigning it to.
+
+This is exactly as you would expect. If we assign two different variables the exact same primitive value both variable would have a value that is exactly the same as each other.
+
+When we compare these two variables what we are comparing is the value that they contain.
+
+```javascript
+var foo = "Hello World";
+var bar = "Hello World";
+foo === bar // true
+```
+foo's value which is "Hello world" is being compared to bar's value which also exactly the same "Hello world". 
+
+```javascript
+foo === bar // is the same as below
+"Hello World" === "Hello World"
+```
+Pretty straight forward so far, right?
+<br />
+<br />
+
+### Primitive Types are _immutable_
 <br />
 There is no way we can change or mutate a primitive's value.
 
@@ -89,24 +112,6 @@ Line 2: bar is given the value of foo which is 1
 (At this point both bar and foo has the value of 1.)<br>
 Line 3: we assign bar to value 2.<br>
 Now bar has a value of 2, foo still has the value of 1. Foo is completed unaffected by our new assignment to bar in Line 3, hence foo is still 1.
-
 <br>
 
-### Primitive Types are _compared_ by value
-<br />
-As we saw in earlier examples, the primitive's value is stored directly to its variable assignment.
-
-This means that if we assign two different variables the exact same primitive value, both variable would store have the value of that exact same primitive value and as you can expert comparing them would yield true.
-
-```javascript
-var foo = "Hello World";
-var bar = "Hello World";
-foo === bar // true
-```
-foo's value is being compared to bar's value, 
-
-```javascript
-foo === bar // is the same as below
-"Hello World" === "Hello World"
-```
-Thats it for now we would compare and contrast primitive value with reference type on the next post.
+Thats it for now! We would compare and contrast primitive types with reference type on the next post.
